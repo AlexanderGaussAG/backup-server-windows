@@ -1,0 +1,55 @@
+{
+  "name": "mssqlbackup",
+  "version": "0.0.1",
+  "author": "Alexander Gauss",
+  "bin": {
+    "mssqlbackup": "./bin/run"
+  },
+  "bugs": "https://github.com/AlexanderGaussAG/Node-Backup-Server/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.18",
+    "@oclif/config": "^1.13.2",
+    "@oclif/plugin-help": "^2.2.0",
+    "cron": "^1.7.1",
+    "js-yaml": "^3.13.1",
+    "node-windows": "^0.1.14",
+    "nodejs-base64": "^1.0.3",
+    "nodemailer": "^6.3.0",
+    "smtp": "^0.1.4",
+    "tiny-cli-editor": "^0.1.1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "globby": "^10.0.1",
+    "rimraf": "^2.6.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/AlexanderGaussAG/Node-Backup-Server",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "mssqlbackup",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "https://github.com/AlexanderGaussAG/Node-Backup-Server",
+  "scripts": {
+    "postpack": "rimraf oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
