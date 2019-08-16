@@ -11,7 +11,7 @@ class activateService extends Command {
         var svc = new Service({
             name:'mssql-backup',
             description: 'a simple service to backup mssql databases',
-            script: '../lib/start.js'
+            script: '%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\mssqlbackup\\src\\lib\\start.js'
         });
 
         svc.on('install',function(){
