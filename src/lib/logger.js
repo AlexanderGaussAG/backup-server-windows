@@ -14,13 +14,13 @@ function logEvents(log){
             fs.readFile(res[res.length-1], 'utf-8', (err, data) => {
                 if(((data.split(";").length-1) >= 100)){
                     let logDir = "C:\\MSSQL-Backup\\logs";
-                    fs.writeFile(logDir+"\\logs_"+`${cd}`, log.split("\n").join(" ")+"\n", (err) => {
+                    fs.writeFile(logDir+"\\logs_"+`${cd}`, log+"\n", (err) => {
                         if(err) throw err;
                     });
                 }
                 else{
                     let nLog = res[res.length-1]
-                    fs.appendFile(nLog, "\n"+(log.split("\n").join(" "))+";\n", (err) => {
+                    fs.appendFile(nLog, "\n"+log+";\n", (err) => {
                         if(err) throw err;
                     })
                 }
@@ -36,7 +36,7 @@ function getAllConfigFiles(callback){
         let confArr = [];
         let i = 0;
         files.forEach((file) => {
-           confArr[i] = logfDir+"/"+file;
+           confArr[i] = logDir+"/"+file;
            i++;
         });
         callback(confArr);
