@@ -4,5 +4,5 @@ mkdir logs
 mkdir configs
 mkdir MSSQL-Backup-Config
 cd MSSQL-Bakup-Config
-echo '{"smtp": {"server": "<your smtp server>","username": "<smtp username>","smt_pasword": "<your smtp password>"}}' > mail.json
+echo {"smtp": {"host": "<your smtp server>","secure": true, "port": 465, "auth": {"user": "<username>", "password": "<password>"}}} > mail.json
 code mail.json
