@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const { base64encode, base64decode } = require('nodejs-base64');
 const mail = require("./mail");
+const param = require("C:\\MSSQL-Backup\\MSSQL-Backup-Config\\mail.json");
 
 function init(params, callback){
     for(let i = 0; i<= (params.backupFolder).length-1;i++){

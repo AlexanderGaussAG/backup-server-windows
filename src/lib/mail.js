@@ -1,5 +1,4 @@
 const nodemailer = require('nodemailer');
-const smtpAuth = require('smtp');
 const smtpAuth = require('C:\\MSSQL-Backup\\MSSQL-Backup-Config\\mail.json');
 
 async function main(param, status){

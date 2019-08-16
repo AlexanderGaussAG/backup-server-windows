@@ -6,7 +6,7 @@ function logEvents(log){
         const cd = new Date().YYYYMMDDHHMMSS();
         if(res.length == 0){
             let logDir = "C:\\MSSQL-Backup\\logs";
-            fs.writeFile(logDir+"\\logs_"+cd, log.split("\n").join(" ")+";\n", (err) => {
+            fs.writeFile(logDir+"\\logs_"+cd, log+";\n", (err) => {
                 if(err) throw err;
             });
         }
@@ -31,12 +31,12 @@ function logEvents(log){
 
 function getAllConfigFiles(callback){
     let logDir = "C:\\MSSQL-Backup\\logs"; //get directory which contains the files
-    fs.readdir(ConfDir, (err, files) => {
+    fs.readdir(logDir, (err, files) => {
         if(err) throw err;
         let confArr = [];
         let i = 0;
         files.forEach((file) => {
-           confArr[i] = ConfDir+"/"+file;
+           confArr[i] = logfDir+"/"+file;
            i++;
         });
         callback(confArr);
