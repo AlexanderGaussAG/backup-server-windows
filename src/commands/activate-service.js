@@ -3,6 +3,8 @@ const {Command, flags} = require('@oclif/command');
 const fs = require('fs');
 const path = require('path');
 const Service = require('node-windows').Service;
+var os = require('os');
+
 
 class activateService extends Command {
   async run() {
@@ -11,7 +13,7 @@ class activateService extends Command {
         var svc = new Service({
             name:'mssql-backup',
             description: 'a simple service to backup mssql databases',
-            script: 'C:\\%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\mssqlbackup\\src\\lib\\start.js'
+            script: 'C:\\Users\\'+os.userInfo().username+'\\AppData\\Roaming\\npm\\node_modules\\mssqlbackup\\src\\lib\\start.js'
         });
 
         svc.on('install',function(){
