@@ -3,6 +3,8 @@ const smtpAuth = require('C:\\MSSQL-Backup\\MSSQL-Backup-Config\\mail.json');
 
 async function main(param, status, row){
 
+    if(param.sendEmail){
+
     let transporter = nodemailer.createTransport({
         host: smtpAuth.smtp.host,
         port: smtpAuth.smtp.port,
@@ -33,6 +35,7 @@ async function main(param, status, row){
             text: `Das Backup wurde erfolglos erstellt und nicht auf dem ${param.backupFolder[row].path} hinterlegt`,
             html: `<b><h1>BACKUP NICHT ERFOLGREICH</h1>\nDas Backup von ${param.db.database} wurde erfolglos erstellt und nicht auf dem Pfad "${param.backupFolder[row].path}" hinterlegt <hr> ${crDate}</b>`
         });
+    }
     }
 
 }
