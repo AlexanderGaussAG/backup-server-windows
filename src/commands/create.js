@@ -15,7 +15,7 @@ class createConfig extends Command {
 
     function createJSONarray(arr){
         let otp = '[{'
-        for(i=0;i<=arr.length-1;i++){
+        for(let i=0;i<=arr.length-1;i++){
             if(i == arr.length-1){
                 otp+='{"path": "'+arr[i]+'"}';
             }
