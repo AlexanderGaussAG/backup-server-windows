@@ -32,7 +32,7 @@ class createConfig extends Command {
     for(let i = 0; i<=n-1; i++){
         x[i] = await cli.prompt("Path");
     }
-    x = createJSONarray(arr);
+    x = createJSONarray(x);
     let dbuser = await cli.prompt("DB username");
     let dbpw = await cli.prompt("BD password");
     let dbsv = await cli.prompt("DB server");
