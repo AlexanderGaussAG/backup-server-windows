@@ -1,6 +1,6 @@
 {
   "name": "mssqlbackup",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Alexander Gauss",
   "bin": {
     "mssqlbackup": "./bin/run"
