@@ -7,7 +7,6 @@ const mail = require("./mail");
 function init(params, callback){
     for(let i = 0; i<= (params.backupFolder).length-1;i++){
         var datetime = new Date();
-        console.log(datetime);
         datetime = (""+datetime).split(":").join("-");
         const backup = `SqlCmd -S "${(params.db.server).split("/").join("\\")}" -U ${params.db.user} -P ${base64decode(params.db.password)} -Q "BACKUP DATABASE [${params.db.database}] TO DISK='${(params.backupFolder[i].path).split("/").join("\\")+params.db.database+datetime+".bak"}'"`
         exec(backup, (err, stdout, stderr) => {
