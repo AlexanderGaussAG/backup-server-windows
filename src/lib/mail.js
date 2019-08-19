@@ -2,8 +2,6 @@ const nodemailer = require('nodemailer');
 const smtpAuth = require('C:\\MSSQL-Backup\\MSSQL-Backup-Config\\mail.json');
 
 async function main(param, status, row){
-    console.log(param);
-    console.log(status);
 
     let transporter = nodemailer.createTransport({
         host: smtpAuth.smtp.host,
