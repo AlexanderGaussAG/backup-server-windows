@@ -21,9 +21,12 @@ function init(param){
 }
 
 function getAllConfigFiles(param, callback){
+    console.log(param)
     let ConfDir = param; //get directory which contains the files
     fs.readdir(ConfDir, (err, files) => {
-        if(err) throw err;
+        if(err){
+            log(err);
+        }
         let confArr = [];
         let i = 0;
         files.forEach((file) => {

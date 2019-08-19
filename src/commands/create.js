@@ -14,7 +14,7 @@ class createConfig extends Command {
     const {flags} = this.parse(createConfig)
 
     function createJSONarray(arr){
-        let otp = '[{'
+        let otp = '['
         for(let i=0;i<=arr.length-1;i++){
             if(i == arr.length-1){
                 otp+='{"path": "'+arr[i]+'"}';
@@ -23,6 +23,8 @@ class createConfig extends Command {
                 otp+='{"path": "'+arr[i]+'"},';
             }
         }
+        otp+="]";
+        console.log(otp)
         return JSON.parse(otp);
     }
     
