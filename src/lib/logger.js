@@ -6,7 +6,7 @@ function logEvents(log){
         const cd = new Date().YYYYMMDDHHMMSS();
         if(res.length == 0){
             let logDir = "C:\\MSSQL-Backup\\logs";
-            fs.writeFile(logDir+"\\logs_"+cd, log+";\n", (err) => {
+            fs.writeFile(logDir+"\\logs_"+cd, cd+log+";\n", (err) => {
                 if(err) throw err;
             });
         }
@@ -14,7 +14,7 @@ function logEvents(log){
             fs.readFile(res[res.length-1], 'utf-8', (err, data) => {
                 if(((data.split(";").length-1) >= 100)){
                     let logDir = "C:\\MSSQL-Backup\\logs";
-                    fs.writeFile(logDir+"\\logs_"+`${cd}`, log+"\n", (err) => {
+                    fs.writeFile(logDir+"\\logs_"+`${cd}`, cd+log+"\n", (err) => {
                         if(err) throw err;
                     });
                 }
