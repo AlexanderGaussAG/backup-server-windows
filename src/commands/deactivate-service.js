@@ -22,7 +22,7 @@ class activateService extends Command {
     }
 }
 
-activateService.description = `activates the windows service feature`
+activateService.description = `deactivates the windows service feature`
 
 activateService.flags = {
   name: flags.string({char: 'n', description: 'name to print'}),
