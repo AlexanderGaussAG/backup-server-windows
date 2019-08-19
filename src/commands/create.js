@@ -12,6 +12,19 @@ const { cli } = require('cli-ux');
 class createConfig extends Command {
   async run() {
     const {flags} = this.parse(createConfig)
+
+    function createJSONarray(arr){
+        let otp = '[{'
+        for(i=0;i<=arr.length-1;i++){
+            if(i == arr.length-1){
+                otp+='{"path": "'+arr[i]+'"}';
+            }
+            else{
+                otp+='{"path": "'+arr[i]+'"},';
+            }
+        }
+        return JSON.parse(otp);
+    }
     
     const name = await cli.prompt("File Name");
     const n = await cli.prompt("In how many directories do you want to store the backup?")
@@ -19,6 +32,7 @@ class createConfig extends Command {
     for(let i = 0; i<=n-1; i++){
         x[i] = await cli.prompt("Path");
     }
+    x = createJSONarray(arr);
     let dbuser = await cli.prompt("DB username");
     let dbpw = await cli.prompt("BD password");
     let dbsv = await cli.prompt("DB server");
@@ -43,9 +57,7 @@ class createConfig extends Command {
              server: dbsv,
              database: dbdb
          },
-         backupFolder: [
-             {path: x[0]}
-         ],
+         backupFolder: x,
          email: email,
          sendEmail: emailtf,
          cronTime: crontime,

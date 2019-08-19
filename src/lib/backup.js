@@ -7,11 +7,14 @@ const param = require("C:\\MSSQL-Backup\\MSSQL-Backup-Config\\mail.json");
 
 function init(params, callback){
     for(let i = 0; i<= (params.backupFolder).length-1;i++){
-        const backup = `SqlCmd -S "${params.db.server}" -U ${params.db.user} -P ${base64decode(params.db.password)} -Q "BACKUP DATABASE [${params.db.database}] TO DISK='${params.backupFolder[i].path}'"`
+        var datetime = new Date();
+        console.log(datetime);
+        datetime = (""+datetime).split(":").join("-");
+        const backup = `SqlCmd -S "${(params.db.server).split("/").join("\\")}" -U ${params.db.user} -P ${base64decode(params.db.password)} -Q "BACKUP DATABASE [${params.db.database}] TO DISK='${(params.backupFolder[i].path).split("/").join("\\")+params.db.database+datetime+".bak"}'"`
         exec(backup, (err, stdout, stderr) => {
             if(err){callback(err); mail(param, false)}
             else if(stdout){
-                const validate = `SqlCmd -S "${params.db.server}" -U ${params.db.user} -P ${base64decode(params.db.password)} -Q "RESTORE VERIFYONLY FROM DISK = '${params.backupFolder[i].path}'"`
+                const validate = `SqlCmd -S "${(params.db.server).split("/").join("\\")}" -U ${params.db.user} -P ${base64decode(params.db.password)} -Q "RESTORE VERIFYONLY FROM DISK = '${(params.backupFolder[i].path).split("/").join("\\")+params.db.database+datetime+".bak"}'"`
                 exec(validate, (err, stdout, stderr) => {
                     if(err){callback(err); mail(param, false)}
                     else if(stdout){
