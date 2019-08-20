@@ -1,5 +1,7 @@
 const nodemailer = require('nodemailer');
 const smtpAuth = require('C:\\MSSQL-Backup\\MSSQL-Backup-Config\\mail.json');
+const { base64encode, base64decode } = require('nodejs-base64');
+
 
 async function main(param, status, row){
 
@@ -11,7 +13,7 @@ async function main(param, status, row){
         secure: smtpAuth.smtp.secure,
         auth: {
             user: smtpAuth.smtp.auth.user,
-            pass: smtpAuth.smtp.auth.password
+            pass: base64decode(smtpAuth.smtp.auth.password)
         }
     });
 
