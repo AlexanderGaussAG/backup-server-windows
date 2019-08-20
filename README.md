@@ -15,32 +15,11 @@ mssqlbackup
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g mssqlbackup #install the service for your current user
-
-$ mssqlbackup prepare 
-#after this an editor window will open and you can type in your SMTP-Server creteria
-
-#to activate the service type mssqlbackup activate-service. After that you will be prompted to type in you windows username and password
-$ mssqlbackup activate-service
-# You have to be in posession of an admin account to do that
-
-#to create a backup-Conf File type mssqlbackup create
-$ mssqlbackup create
-#after that you have to restart the service with
-$ mssqlbackup restart # for this command you have to be logged in to an admin account
-
-#to delete a conf-file type 
-$ mssqlbackup delete
-#after that you have to type in the name of the backup-conf file and restart the service
-$ mssqlbackup restart
-
-#to see all backup-conf files type
-$ mssqlbackup show
-
+$ npm install -g mssqlbackup
 $ mssqlbackup COMMAND
 running command...
 $ mssqlbackup (-v|--version|version)
-mssqlbackup/1.0.4 win32-x64 node-v10.16.2
+mssqlbackup/1.1.4 win32-x64 node-v10.16.2
 $ mssqlbackup --help [COMMAND]
 USAGE
   $ mssqlbackup COMMAND
@@ -71,7 +50,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\activate-service.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.0.4/src\commands\activate-service.js)_
+_See code: [src\commands\activate-service.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.1.4/src\commands\activate-service.js)_
 
 ## `mssqlbackup create`
 
@@ -85,7 +64,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\create.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.0.4/src\commands\create.js)_
+_See code: [src\commands\create.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.1.4/src\commands\create.js)_
 
 ## `mssqlbackup deactivate-service`
 
@@ -99,7 +78,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\deactivate-service.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.0.4/src\commands\deactivate-service.js)_
+_See code: [src\commands\deactivate-service.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.1.4/src\commands\deactivate-service.js)_
 
 ## `mssqlbackup delete`
 
@@ -113,7 +92,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\delete.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.0.4/src\commands\delete.js)_
+_See code: [src\commands\delete.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.1.4/src\commands\delete.js)_
 
 ## `mssqlbackup edit`
 
@@ -127,7 +106,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\edit.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.0.4/src\commands\edit.js)_
+_See code: [src\commands\edit.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.1.4/src\commands\edit.js)_
 
 ## `mssqlbackup help [COMMAND]`
 
@@ -158,7 +137,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\prepare.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.0.4/src\commands\prepare.js)_
+_See code: [src\commands\prepare.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.1.4/src\commands\prepare.js)_
 
 ## `mssqlbackup restart`
 
@@ -172,7 +151,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\restart.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.0.4/src\commands\restart.js)_
+_See code: [src\commands\restart.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.1.4/src\commands\restart.js)_
 
 ## `mssqlbackup show`
 
@@ -186,5 +165,5 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\show.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.0.4/src\commands\show.js)_
+_See code: [src\commands\show.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.1.4/src\commands\show.js)_
 <!-- commandsstop -->
