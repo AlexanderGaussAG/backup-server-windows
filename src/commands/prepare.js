@@ -8,7 +8,7 @@ class prepare extends Command {
     async run() {
         let oclif = this.log;
         const {flags} = this.parse(prepare)
-        child_process.exec(path.resolve(__dirname,'../../install.bat'), function(error, stdout, stderr) {
+        child_process.exec(path.resolve(__dirname,'../install.bat'), function(error, stdout, stderr) {
           if(stderr){
               oclif(stderr);
           }
