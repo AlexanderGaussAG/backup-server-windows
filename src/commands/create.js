@@ -5,7 +5,6 @@ const path = require('path');
 
 const { base64encode, base64decode } = require('nodejs-base64');
 
-const yaml = require('js-yaml');
 
 const { cli } = require('cli-ux');
 
