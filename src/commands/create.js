@@ -6,6 +6,8 @@ const path = require('path');
 const { base64encode, base64decode } = require('nodejs-base64');
 
 
+const { cli } = require('cli-ux');
+
 class createConfig extends Command {
   async run() {
     const {flags} = this.parse(createConfig)

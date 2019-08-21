@@ -14,7 +14,8 @@
     "node-windows": "^0.1.14",
     "nodejs-base64": "^1.0.3",
     "nodemailer": "^6.3.0",
-    "smtp": "^0.1.4"
+    "smtp": "^0.1.4",
+    "cli-ux": "^5.3.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
