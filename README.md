@@ -16,6 +16,12 @@ mssqlbackup
 <!-- usage -->
 ```sh-session
 $ npm install -g mssqlbackup
+to prepare your system run: $ mssqlbackup prepare => you should do this before anything else
+to activate the service run: $ mssqlbackup activate-service => start it immediatelly after you prepared the service or after you created a conf file
+to deactivate the service run: $ mssqlbackup deactivate-service
+to create a conf file run: $ mssqlbackup create 
+to delete a conf file run: $ mssqlbackup delete => type filename
+to apply the changes to the system, type: $ mssqlbackup restart
 $ mssqlbackup COMMAND
 running command...
 $ mssqlbackup (-v|--version|version)
