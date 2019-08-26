@@ -194,7 +194,7 @@ function dirCreation(dirlist){
     for(i=0;i<=l-1;i++){
         let curdir = dirlist['dirname'+i];
         if(!fs.existsSync(curdir)){
-            fs.mkdirSync(curdir)
+            fs.mkdirSync(curdir, { recursive: true })
         }
     }
 }
