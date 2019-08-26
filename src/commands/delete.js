@@ -27,7 +27,7 @@ class activateService extends Command {
     }
 }
 
-activateService.description = `deactivates the windows service feature`
+activateService.description = `deletes a config file`
 
 activateService.flags = {
   name: flags.string({char: 'n', description: 'name to print'}),
