@@ -191,10 +191,10 @@ function generatePaths(dirlist){
 
 function dirCreation(dirlist){
     let l = getDirlength(dirlist);
-    for(i=0;i<=dirlist-1;i++){
+    for(i=0;i<=l-1;i++){
         let curdir = dirlist['dirname'+i];
         if(!fs.existsSync(curdir)){
-            fs.mkdir(curdir)
+            fs.mkdirSync(curdir)
         }
     }
 }
