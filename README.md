@@ -16,10 +16,16 @@ mssqlbackup
 <!-- usage -->
 ```sh-session
 $ npm install -g mssqlbackup
+to prepare your system run: $ mssqlbackup prepare => you should do this before anything else
+to activate the service run: $ mssqlbackup activate-service => start it immediatelly after you prepared the service or after you created a conf file
+to deactivate the service run: $ mssqlbackup deactivate-service
+to create a conf file run: $ mssqlbackup create 
+to delete a conf file run: $ mssqlbackup delete => type filename
+to apply the changes to the system, type: $ mssqlbackup restart
 $ mssqlbackup COMMAND
 running command...
 $ mssqlbackup (-v|--version|version)
-mssqlbackup/1.2.3 win32-x64 node-v10.16.2
+mssqlbackup/1.2.2 win32-x64 node-v10.16.2
 $ mssqlbackup --help [COMMAND]
 USAGE
   $ mssqlbackup COMMAND
@@ -50,7 +56,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\activate-service.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.3/src\commands\activate-service.js)_
+_See code: [src\commands\activate-service.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.2/src\commands\activate-service.js)_
 
 ## `mssqlbackup create`
 
@@ -64,7 +70,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\create.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.3/src\commands\create.js)_
+_See code: [src\commands\create.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.2/src\commands\create.js)_
 
 ## `mssqlbackup deactivate-service`
 
@@ -78,7 +84,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\deactivate-service.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.3/src\commands\deactivate-service.js)_
+_See code: [src\commands\deactivate-service.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.2/src\commands\deactivate-service.js)_
 
 ## `mssqlbackup delete`
 
@@ -92,7 +98,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\delete.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.3/src\commands\delete.js)_
+_See code: [src\commands\delete.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.2/src\commands\delete.js)_
 
 ## `mssqlbackup edit`
 
@@ -106,7 +112,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\edit.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.3/src\commands\edit.js)_
+_See code: [src\commands\edit.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.2/src\commands\edit.js)_
 
 ## `mssqlbackup help [COMMAND]`
 
@@ -137,7 +143,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\prepare.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.3/src\commands\prepare.js)_
+_See code: [src\commands\prepare.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.2/src\commands\prepare.js)_
 
 ## `mssqlbackup restart`
 
@@ -151,7 +157,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\restart.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.3/src\commands\restart.js)_
+_See code: [src\commands\restart.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.2/src\commands\restart.js)_
 
 ## `mssqlbackup show`
 
@@ -165,5 +171,5 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\show.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.3/src\commands\show.js)_
+_See code: [src\commands\show.js](https://github.com/AlexanderGaussAG/Node-Backup-Server/blob/v1.2.2/src\commands\show.js)_
 <!-- commandsstop -->
