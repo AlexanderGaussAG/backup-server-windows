@@ -8,10 +8,43 @@ const { base64encode, base64decode } = require('nodejs-base64');
 
 const { cli } = require('cli-ux');
 
+const inquirer = require('inquirer');
+
+const table = require('../lib/table');
+
 class createConfig extends Command {
   async run() {
     const {flags} = this.parse(createConfig)
 
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'filename',
+            message: 'Filename'
+        }
+    ])
+    .then(result => {
+       
+            table((res) => {
+                res.db.server = (res.db.server).split("\\").join("/");
+                res.backupFolder = pather(res.backupFolder);
+                res.ttl = parseInt(res.ttl);
+                fs.writeFile("C:\\MSSQL-Backup\\configs\\"+result.filename+".json", JSON.stringify(res), (err) => {
+                    this.log("Conf File erstellt");
+                })
+            })
+    })
+
+    function pather(pathArray){
+        for(i=0;i<=pathArray.length-1;i++){
+            if((pathArray[i].path).charAt((pathArray[i].path).length) != "/"){
+                pathArray[i].path = pathArray[i].path+"/";
+            }
+        }
+        return pathArray;
+    }
+    
+    /*
     function createJSONarray(arr){
         let otp = '['
         for(let i=0;i<=arr.length-1;i++){
@@ -68,6 +101,7 @@ class createConfig extends Command {
     fs.writeFile("C:\\MSSQL-Backup\\configs\\"+name+".json", JSON.stringify(obj), (err) => {
         this.log("Conf File erstellt");
     })
+    */
   }
 }
 

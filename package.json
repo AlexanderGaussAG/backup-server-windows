@@ -10,12 +10,13 @@
     "@oclif/command": "^1.5.18",
     "@oclif/config": "^1.13.2",
     "@oclif/plugin-help": "^2.2.0",
+    "cli-ux": "^5.3.1",
     "cron": "^1.7.1",
+    "inquirer": "^7.0.0",
     "node-windows": "^0.1.14",
     "nodejs-base64": "^1.0.3",
     "nodemailer": "^6.3.0",
-    "smtp": "^0.1.4",
-    "cli-ux": "^5.3.1"
+    "smtp": "^0.1.4"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
